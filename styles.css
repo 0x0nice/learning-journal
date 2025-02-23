@@ -1,46 +1,52 @@
-/* ✨ Global Styles */
+/* ✨ Apple-Inspired Global Styles */
 :root {
-    --primary-bg: #f4f4f4;
-    --primary-text: #333;
+    --primary-bg: #f5f5f7;
+    --primary-text: #1d1d1f;
     --secondary-bg: white;
-    --nav-bg: #333;
-    --nav-text: white;
-    --accent-color: #007bff;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-text: #1d1d1f;
+    --accent-color: #0071e3;
 }
 
-/* ✨ Dark Mode Variables */
+/* ✨ Dark Mode */
 .dark-mode {
     --primary-bg: #121212;
-    --primary-text: #eee;
-    --secondary-bg: #1e1e1e;
-    --nav-bg: #222;
-    --nav-text: #eee;
+    --primary-text: #f5f5f7;
+    --secondary-bg: #1d1d1f;
+    --nav-bg: rgba(29, 29, 31, 0.9);
+    --nav-text: #f5f5f7;
 }
 
 /* ✨ Reset & Basic Styling */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg);
     color: var(--primary-text);
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
-/* ✨ Header & Navigation */
+/* ✨ Navbar - Floating Like Apple */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background: var(--nav-bg);
-    color: var(--nav-text);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
     text-align: center;
-    padding: 15px 0;
+    z-index: 100;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav ul li {
@@ -50,94 +56,76 @@ nav ul li {
 nav ul li a {
     color: var(--nav-text);
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: var(--accent-color);
 }
 
-/* ✨ Main Content */
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--secondary-bg);
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+/* ✨ Hero Section (Apple-Like Centered Text) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
 }
 
-/* ✨ Journal Entry Styling */
-article {
-    padding: 20px;
-    margin-bottom: 20px;
-    background: var(--primary-bg);
-    border-left: 5px solid var(--accent-color);
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* ✨ Buttons */
+.button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    margin-top: 20px;
+    text-decoration: none;
     border-radius: 8px;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
-article h3 {
-    margin-top: 0;
-    color: var(--accent-color);
+.button:hover {
+    background: #005bb5;
+}
+
+/* ✨ Content Sections */
+main {
+    max-width: 900px;
+    margin: 100px auto 40px;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
 /* ✨ Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background: var(--nav-bg);
-    color: var(--nav-text);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* ✨ Dark Mode Button */
-#theme-toggle {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background: var(--accent-color);
-    border: none;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-#theme-toggle:hover {
-    background: #0056b3;
-}
-
-/* ✨ About Page Styling */
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    max-width: 800px;
-    margin: 40px auto;
     padding: 20px;
-    background: var(--secondary-bg);
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    border: 3px solid var(--accent-color);
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--primary-text);
-    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.7;
 }
