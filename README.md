@@ -23,3 +23,5 @@ To view the journal, open `index.html` in your web browser.
 - About section
 - Responsive design
 - Interactive elements
+
+https://0x0nice.github.io/learning-journal/
