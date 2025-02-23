@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 /* ✨ Apple-Inspired Global Styles */
 :root {
     --primary-bg: #f5f5f7;
@@ -8,7 +10,7 @@
     --accent-color: #0071e3;
 }
 
-/* ✨ Dark Mode */
+/* ✨ Global Dark Mode Styling */
 .dark-mode {
     --primary-bg: #121212;
     --primary-text: #f5f5f7;
@@ -19,7 +21,7 @@
 
 /* ✨ Reset & Basic Styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    font-family: 'EB Garamond', serif;
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg);
@@ -27,7 +29,17 @@ body {
     transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
-/* ✨ Navbar - Floating Like Apple */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+nav, 
+.button,
+#darkModeToggle {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ✨ Fixed Navbar Like Apple's */
 header {
     position: fixed;
     top: 0;
@@ -35,9 +47,9 @@ header {
     background: var(--nav-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
-    z-index: 100;
+    z-index: 1000;
 }
 
 nav ul {
@@ -46,7 +58,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 nav ul li {
@@ -63,6 +75,11 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--accent-color);
+}
+
+/* ✨ Make sure the content doesn't get covered by the fixed navbar */
+main {
+    margin-top: 80px;
 }
 
 /* ✨ Hero Section (Apple-Like Centered Text) */

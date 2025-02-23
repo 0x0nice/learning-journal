@@ -1,17 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Create Dark Mode Toggle Button
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle Dark Mode";
     toggleButton.id = "theme-toggle";
 
-    document.body.insertBefore(toggleButton, document.body.firstChild);
-
-    toggleButton.addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-    });
-
-    // Load theme preference
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
+    // Append the button inside the footer (bottom of the page)
+    const footer = document.querySelector("footer");
+    if (footer) {
+        footer.appendChild(toggleButton);
+    } else {
+        document.body.appendChild(toggleButton);
     }
+
+    // Function to enable dark mode
+    function enableDarkMode() {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+    }
+
+    // Function to disable dark mode
+    function disableDarkMode() {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+    }
+
+    // Check saved theme preference
+    if (localStorage.getItem("theme") === "dark") {
+        enableDarkMode();  // Ensure dark mode applies on all pages
+    }
+
+    // Toggle dark mode when the button is clicked
+    toggleButton.addEventListener("click", function () {
+        if (document.body.classList.contains("dark-mode")) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
 });
